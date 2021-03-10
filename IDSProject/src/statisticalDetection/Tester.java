@@ -22,7 +22,6 @@ public class Tester {
 	static double baseLineMean = 10, baseLineSD = 1;
 	static int slidingWindowSize = 5;
 	
-	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		generate();
 		findDiscrepancies(numberList);

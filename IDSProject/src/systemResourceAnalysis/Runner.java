@@ -16,15 +16,20 @@ import java.util.Scanner;
  */
 public class Runner {
 	public static void main(String[] args) throws IOException {
-		Scanner scnr = new Scanner(new FileReader("src//topdata.csv"));
-		File file = new File("src//newTopData.csv");
+		Scanner scnr = new Scanner(new FileReader("resources//topdata.csv"));
+		File file = new File("resources//newTopData.csv");
 		PrintWriter pw;
 		
 		if(!file.exists())
 			file.createNewFile();
 		
-		pw = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
+		pw = new PrintWriter(new BufferedWriter(new FileWriter(file)));
 		
+		parseData(scnr, pw);
+		pw.close();
+	}
+	
+	private static void parseData(Scanner scnr, PrintWriter pw) {
 		int counter = 0;
 		while(scnr.hasNextLine()) {
 			String tempString = scnr.nextLine();
@@ -78,10 +83,5 @@ public class Runner {
 			else
 				counter = 0;
 		}
-		pw.close();
-	}
-	
-	public static void writeData() {
-		
 	}
 }

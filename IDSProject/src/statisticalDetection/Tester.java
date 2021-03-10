@@ -71,7 +71,7 @@ public class Tester {
 	}
 	
 	public static void findDiscrepancies(ArrayList<Double> arr) throws FileNotFoundException, IOException {
-		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("src//alerts.csv")));
+		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("resources//alertLog.csv")));
 		Date date = new Date();
 		
 		for(int i = 0; i < arr.size() - slidingWindowSize; i++) {

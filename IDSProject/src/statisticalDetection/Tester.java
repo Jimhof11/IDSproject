@@ -28,7 +28,7 @@ public class Tester {
 	}
 
 	/* This method creates 100 different numbers with mean of 10 and SD of 1 and appends it to numberList.
-	 * It creates an additional 100 different numbers with mean of 50 and SD of 10 and it to numberList. 
+	 * It creates an additional 100 different numbers with mean of 50 and SD of 10 and it to numberList.
 	 */
 	public static void generate() {
 		double[] numbers = new double[100];

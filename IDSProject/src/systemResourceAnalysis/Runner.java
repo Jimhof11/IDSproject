@@ -12,7 +12,6 @@ import java.util.Scanner;
  * 
  * @author Joseph Yang
  * @version 1.0
- * @TODO indexPlaceHolder needs to be implemented into the counter events
  */
 public class Runner {
 	public static void main(String[] args) throws IOException {

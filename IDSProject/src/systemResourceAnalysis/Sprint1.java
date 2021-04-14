@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Joseph Yang
  * @version 1.0
  */
-public class Sprint1 {
+public class Runner {
 	public static void main(String[] args) throws IOException {
 		Scanner scnr = new Scanner(new FileReader("resources//topdata.csv"));
 		File file = new File("resources//newTopData.csv");

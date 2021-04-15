@@ -1,0 +1,65 @@
+***IDS Rule Based Detection config file***
+
+
+	Suspiscion Rules
+
+Rule ID: 001
+Priority Level: 1
+Category: Statistic Detection
+Rule Name: Statistic Window 
+Description: Sliding window creation
+Alert Generation: Report to console. Write to an alert log file.
+
+
+Rule ID: 004
+Priority Level: 3
+Category: SystemLog Analysis
+Rule Name: Logins
+Description: Three failed login attempts.
+Alert Generation: Report to console. Call AlertLogger to write alert
+
+
+Rule ID: 005
+Priority Level: 3
+Category: System Resource Analysis
+Rule Name: Data Diviation
+Description: Precent diviation found in resource data.
+Alert Generation: Report to console. Call AlertLogger program to write to allAlerts.csv file.
+
+
+
+Rule ID: 007
+Priority Level: 1
+Category: Network Analysis
+Rule Name: SSH Login
+Description: Found SSH login attempt.
+Alert Generation: Report to console. Call AlertLogger program to write to allAlerts.csv file.
+
+
+
+	Attack Rules
+
+Rule ID: 002
+Priority Level: 9
+Category: CriticalFile Integrity
+Rule Name: File Integrity
+Description: Critical files manipulated, hashes not equal.
+Alert Generation: Report to console. Call AlertLogger program to write to allAlerts.csv file. 
+
+
+Rule ID: 003
+Priority Level: 5
+Category: AppLog Analysis
+Rule Name: Data Manipulation
+Description: Sequence numbers out of order.
+Alert Generation: Report to console. Write to alert log file.
+
+
+Rule ID: 006
+Priority Level: 5
+Category: Correlation
+Rule Name: Alert Window
+Description: Time window triggered by at least 2 alerts.
+Alert Generation: Report to console. Call AlertLogger program to write to allAlerts.csv file.
+
+

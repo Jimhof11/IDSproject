@@ -55,18 +55,23 @@ public class Sprint2 {
 	public static void detectAnomalies(ArrayList<Alert> alerts) {
 		int i = alerts.size() - 1;
 		int counter = 1;
+		Calendar cal1 = null, cal2 = null;
 		
 		while(i > 0) {
-			Calendar cal1 = alerts.get(i - 1).calendar, cal2 = alerts.get(i).calendar;
-			if(cal1.get(Calendar.DAY_OF_MONTH) != cal2.get(Calendar.DAY_OF_MONTH) && cal1.get(Calendar.HOUR_OF_DAY) != cal2.get(Calendar.HOUR_OF_DAY))
+			cal1 = alerts.get(i - 1).calendar; cal2 = alerts.get(i).calendar;
+			if(cal1.get(Calendar.DAY_OF_MONTH) != cal2.get(Calendar.DAY_OF_MONTH) && cal1.get(Calendar.HOUR_OF_DAY) != cal2.get(Calendar.HOUR_OF_DAY)) {
+				double percentAlertsOfAllAlerts = Math.round((double) counter/alerts.size() * 10000) / 100.0;
+				System.out.println("Anomaly Detected: " + counter + " alerts in the time window of " + timeWindowInMinutes + " minutes at: " + cal1.getTime() + " (" + percentAlertsOfAllAlerts + "%)");
 				counter = 0;
+			}
 			else if(Math.abs(cal1.get(Calendar.MINUTE) - cal2.get(Calendar.MINUTE)) < timeWindowInMinutes)
 				counter++;
 			
-			if(counter > 3)
-				System.out.println("Anomaly Detected: 3 or more alerts in the time window of " + timeWindowInMinutes + " minutes at: " + cal1.getTime());
-			
 			i--;
 		}
+		double percentAlertsOfAllAlerts = Math.round((double) counter/alerts.size() * 10000) / 100.0;
+		System.out.println("Anomaly Detected: " + counter + " alerts in the time window of " + timeWindowInMinutes + " minutes at: " + cal1.getTime() + " (" + percentAlertsOfAllAlerts + "%)");
+		
+		System.out.println("Total Anomalies Detected: " + alerts.size());
 	}
 }
